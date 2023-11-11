@@ -1,0 +1,54 @@
+body{
+    padding: 0;
+    margin: 0;
+    background-image: url(../img/istockphoto-1485281045-1024x1024.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-family: sans-serif;
+    height: 100vh;
+
+}
+form{
+    width: 100%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #680b0b;
+    border-radius: 5px;
+    color: crimson;
+    background-color: transparent;
+
+}
+.container {
+    border: 1px solid crimson;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;}
+.container label {
+  padding: 12px 12px 12px 0;
+  display: inline-block;
+  padding: 10px;
+  color: rgb(255, 255, 255);
+}
+.container input[type=text], .container input[type=number] {
+  width: 80%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  margin-bottom: 10px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+.container button{
+    background-color: crimson;
+    border-radius: 16px;
+  color: white;
+  padding: 20px;
+  border: none;
+  cursor: pointer;
+}
+.container button:hover {
+  background-color: #45a049;
+}

@@ -15,7 +15,7 @@ body {
         justify-content: center;
         align-items: center;
         padding: 0 50px;
-        background-color: aqua;
+        background-color: rgb(70, 218, 218);
 }
 .header__logo {    
         position: absolute;
