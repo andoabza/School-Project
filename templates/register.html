@@ -8,21 +8,22 @@
     <title>Register</title>
 </head>
 <body>
-    <form>
+
+    <form action="{{ url_for('register') }}" method="post">
         <div class="container">
             <h1>Register</h1>
         
             <label for="First name"><b>First name</b></label>
-            <input type="text" placeholder="Enter First name" name="First name" id="First name" required>
+            <input type="text" placeholder="Enter First name" name="first_name" id="first_name" value="{{ request.form['first_name'] }}" required>
              <br>   
             <label for="Middle name"><b>Middle name</b></label>
-            <input type="text" placeholder="Enter Middle name" name="middle_name" id="middle_name" required>
+            <input type="text" placeholder="Enter Middle name" name="middle_name" id="middle_name" value="{{ request.form['middle_name'] }}" required>
                 <br>
             <label for="Last name"><b>Last name</b></label>
-            <input type="text" placeholder="Enter Last name" name="last_name" id="last_name" required>
+            <input type="text" placeholder="Enter Last name" name="last_name" id="last_name" value="{{ request.form['last_name'] }}" required>
             <br>
             <label for="Grade"><b>Grade</b></label>
-            <input type="number" name="grade" id="grade" min="9" max="12">
+            <input type="number" name="grade" id="grade" min="9" max="12" value="{{ request.form['grade'] }}">
             <br>
             <button type="submit" class="registerbtn">Register</button>
             

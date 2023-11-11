@@ -44,11 +44,7 @@ class ModelBase:
     def save(self):
         """updates the public instance attribute updated_at
         with the current datetime"""
-        data = models.storage.all()
-        record = models.storage.get(self.__class__.__name__, self.first_name, self.middle_name, self.last_name, self.grade) 
-        if record in data:
-            print("record exists")
-        # if no such record exists, save the new record
+         # if no such record exists, save the new record
         self.updated_at = datetime.utcnow()
         models.storage.new(self)
         models.storage.save()

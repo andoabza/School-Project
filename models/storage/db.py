@@ -39,7 +39,11 @@ class DbStorage:
 
     def new(self, obj):
         """adds the object to the current database session"""
-        self.__session.add(obj)
+        rec = self.__session.query(obj.__class__).filter_by(first_name=obj.first_name, last_name=obj.last_name).first()
+        if rec is not None:
+            self.__session.merge(rec)
+        else:
+            self.__session.add(obj)
 
     def save(self):
         """commits all changes of the current database session"""
@@ -47,8 +51,10 @@ class DbStorage:
 
     def delete(self, obj=None):
         """deletes from the current database session obj if not None"""
+        
         if obj is not None:
-            self.__session.delete(obj)
+            rec = self.__session.query(obj.__class__).filter_by(first_name=obj.first_name, last_name=obj.last_name).first()
+            self.__session.delete(rec)
 
     def reload(self):
         """creates all tables in the database"""
@@ -62,10 +68,10 @@ class DbStorage:
         """calls remove() method on the private session attribute"""
         self.__session.remove()
     
-    def get(self, cls, first_name, middle_name, last_name, grade):
+    def get(self, cls=None):
         """returns the object based on the class name and its ID,
         or None if not found"""
-        if cls or first_name or middle_name or last_name or grade  not in classes.values():
+        if cls  not in classes.values():
             return None
         else:
             return self.__session.query(cls).all()

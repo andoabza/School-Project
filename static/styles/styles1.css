@@ -31,7 +31,7 @@ form{
   padding: 12px 12px 12px 0;
   display: inline-block;
   padding: 10px;
-  color: rgb(255, 255, 255);
+  color: black;
 }
 .container input[type=text], .container input[type=number] {
   width: 80%;
@@ -40,7 +40,17 @@ form{
   margin-bottom: 10px;
   display: inline-block;
   box-sizing: border-box;
+  border-radius: 16px;
+    background-color: #ccc;
+    
 }
+.container input[type=text]:focus, .container input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+.container input[type=text]::placeholder, .container input[type=number]::placeholder {
+    color: black;
+  }
 .container button{
     background-color: crimson;
     border-radius: 16px;
