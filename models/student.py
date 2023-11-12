@@ -8,6 +8,7 @@ class Student(ModelBase, Base):
     first_name = Column(String(50), nullable=False)
     middle_name = Column(String(50), nullable=True)
     last_name = Column(String(50), nullable=False)
+    gender = Column(String(10), nullable=False)
     grade = Column(Integer, nullable=False)
     
     

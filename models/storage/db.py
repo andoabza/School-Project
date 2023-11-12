@@ -66,7 +66,7 @@ class DbStorage:
 
     def close(self):
         """calls remove() method on the private session attribute"""
-        self.__session.remove()
+        self.__session.close()
     
     def get(self, cls=None):
         """returns the object based on the class name and its ID,

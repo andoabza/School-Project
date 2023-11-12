@@ -7,7 +7,7 @@ body {
         width: 100%;
         height: 100vh;
         color: black;
-        font-family: 'Roboto', sans-serif;
+        font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif
 }
 .header {
         height: 100px;
@@ -15,7 +15,7 @@ body {
         justify-content: center;
         align-items: center;
         padding: 0 50px;
-        background-color: rgb(70, 218, 218);
+        background-color: skyblue;
 }
 .header__logo {    
         position: absolute;
@@ -48,7 +48,7 @@ body {
 }
 .header__menu ul li a:hover{
         color: black;
-        font-weight: 750;
+        font-weight: 800;
 }
 .header__auth{
         position: absolute ;
@@ -70,7 +70,6 @@ body {
         color: black;
     }
 .container{
-        width: 100%;
         height: 100%;
         display: flex;
         justify-content: center;
