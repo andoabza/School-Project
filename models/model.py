@@ -43,3 +43,8 @@ class ModelBase:
         if "_sa_instance_state" in new_dict.keys():
             del new_dict["_sa_instance_state"]
         return new_dict
+    def to_exel(self, file_name):
+        """save to ecxel"""
+        students_dict = storage.all()
+        df = pd.DataFrame.from_records(list(students_dict.values()))
+        df.to_excel(file_name, index=False)

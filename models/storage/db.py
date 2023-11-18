@@ -3,7 +3,7 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.model import Base
 from models.student import Student
-
+import pandas as pd
 
 
 classes = {"Student": Student}
