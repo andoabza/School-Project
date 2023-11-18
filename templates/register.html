@@ -12,7 +12,9 @@
     <form action="{{ url_for('register') }}" method="post">
         <div class="container">
             <h1>Register</h1>
-        
+            <label for="id">Student Id</label>
+            <input type="text" placeholder="Enter Student Id" name="id" id="id" value="{{ request.form['id'] }}" required>
+            <br>
             <label for="First name"><b>First name</b></label>
             <input type="text" placeholder="Enter First name" name="first_name" id="first_name" value="{{ request.form['first_name'] }}" required>
              <br>   
@@ -24,15 +26,24 @@
             <br>
             <label for="gender"><b>Gender</b></label>
             <select name="gender" id="gender" value="{{ request.form['gender'] }}">
-                <option value="female">Female</option>
-                <option value="male">Male</option>
+                <option value="female">Male</option>
+                <option value="male">Female</option>
             </select>
             <label for="Grade"><b>Grade</b></label>
             <input type="number" name="grade" id="grade" min="9" max="12" value="{{ request.form['grade'] }}">
             <br>
             <button type="submit" class="registerbtn">Register</button>
-            
-        </div>
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+    
+        <p>{{ message }}</p>
+    
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        
+    </div>
         
         <div class="container terms">
             

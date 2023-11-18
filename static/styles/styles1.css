@@ -35,7 +35,7 @@ form{
 }
 .gender{
     font-weight: 800;}
-.container input[type=text], .container input[type=number] {
+.container input[type=text], .container input[type=number], .container select {
   width: 80%;
   padding: 12px;
   border: 1px solid #ccc;
@@ -46,11 +46,11 @@ form{
     background-color: #ccc;
     
 }
-.container input[type=text]:focus, .container input[type=number]:focus {
+.container input[type=text]:focus, .container input[type=number]:focus, .container select:focus {
   background-color: #ddd;
   outline: none;
 }
-.container input[type=text]::placeholder, .container input[type=number]::placeholder {
+.container input[type=text]::placeholder, .container input[type=number]::placeholder, .container select::placeholder{ 
     color: black;
   }
 .container button{

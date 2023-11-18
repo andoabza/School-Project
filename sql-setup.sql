@@ -1,0 +1,3 @@
+CREATE USER IF NOT EXISTS 'school'@'localhost' IDENTIFIED BY 'school_pwd';
+GRANT ALL PRIVILEGES ON *.* TO 'school'@'localhost' WITH GRANT OPTION;
+CREATE DATABASE IF NOT EXISTS school_db;

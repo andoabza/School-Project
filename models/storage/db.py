@@ -1,21 +1,22 @@
 """ for the database storage"""
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
-from models.model import ModelBase, Base
+from models.model import Base
 from models.student import Student
 
 
 
 classes = {"Student": Student}
-class DbStorage:
+
+class DBStorage:
     """for the database storage"""
     __engine = None
     __session = None
 
     def __init__(self):
         """initializes the database storage"""
-        user = 'anda'
-        paswd = 'root'
+        user = 'school'
+        paswd = 'school_pwd'
         host = 'localhost'
         db = 'school_db'
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
@@ -24,37 +25,24 @@ class DbStorage:
                                              host,
                                              db))
 
-    def all(self, cls=None):
+    def all(self):
         """returns a dictionary of all objects"""
+        rec = self.__session.query(Student).all()
         new_dict = {}
-        if cls is None:
-            classes = [Student]
-        else:
-            classes = [cls]
-        for cls in classes:
-            for obj in self.__session.query(cls).all():
-                key = "{}.{}".format(type(obj).__name__, obj.id)
-                new_dict[key] = obj
+        for obj in rec:
+            if '_sa_instance_state' in obj.__dict__:
+                del obj.__dict__['_sa_instance_state']
+            new_dict[obj.student_id] = obj.__dict__
         return new_dict
 
     def new(self, obj):
         """adds the object to the current database session"""
-        rec = self.__session.query(obj.__class__).filter_by(first_name=obj.first_name, last_name=obj.last_name).first()
-        if rec is not None:
-            self.__session.merge(rec)
-        else:
-            self.__session.add(obj)
+        
+        self.__session.add(obj)
 
     def save(self):
         """commits all changes of the current database session"""
         self.__session.commit()
-
-    def delete(self, obj=None):
-        """deletes from the current database session obj if not None"""
-        
-        if obj is not None:
-            rec = self.__session.query(obj.__class__).filter_by(first_name=obj.first_name, last_name=obj.last_name).first()
-            self.__session.delete(rec)
 
     def reload(self):
         """creates all tables in the database"""
@@ -67,11 +55,3 @@ class DbStorage:
     def close(self):
         """calls remove() method on the private session attribute"""
         self.__session.close()
-    
-    def get(self, cls=None):
-        """returns the object based on the class name and its ID,
-        or None if not found"""
-        if cls  not in classes.values():
-            return None
-        else:
-            return self.__session.query(cls).all()

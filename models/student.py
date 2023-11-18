@@ -5,6 +5,7 @@ from sqlalchemy import Column, String, Integer
 class Student(ModelBase, Base):
     """the student class"""
     __tablename__ = "students"
+    student_id = Column(String(5), nullable=False, primary_key=True)
     first_name = Column(String(50), nullable=False)
     middle_name = Column(String(50), nullable=True)
     last_name = Column(String(50), nullable=False)
