@@ -15,7 +15,7 @@ body {
         justify-content: center;
         align-items: center;
         padding: 0 50px;
-        background-color: skyblue;
+        background-color: rgb(164, 224, 248);
 }
 .header__logo {    
         position: absolute;
@@ -69,6 +69,7 @@ body {
         font-weight: 750;
         color: black;
     }
+
 .container{
         height: 100%;
         display: flex;
@@ -79,4 +80,3 @@ body {
         padding: 0 50px;
         border: 2px solid black;
 }
-
