@@ -43,3 +43,18 @@ body {
     span{
         color: crimson;
     }   
+
+.carousel-item {
+    transition: transform 2s ease;
+    }
+    
+    .carousel-item-next,
+    .carousel-item-prev,
+    .carousel-item.active {
+    transform: translateX(0);
+    }
+    
+    .carousel-item-next,
+    .carousel-item-prev {
+    transform: translateX(100%);
+    }
