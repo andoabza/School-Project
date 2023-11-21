@@ -2,11 +2,11 @@ import models
 from models import storage
 from models.student import Student
 from flask import Flask, render_template, request, redirect, flash, url_for
-
+from uuid import uuid4
 
 app = Flask(__name__)
 app.strict_slashes = False
-app.secret_key = 'some_secret'
+app.secret_key = uuid4().hex
 
 @app.teardown_appcontext
 def close_db(error):
@@ -58,6 +58,6 @@ def register():
         
     return render_template('register.html')
 
-app.run(debug=True)
+app.run()
 
 
