@@ -5,8 +5,6 @@ from datetime import datetime
 from models import storage
 
 Base = declarative_base()
-tim = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
-
 class ModelBase:
     """the base classs for students"""
     

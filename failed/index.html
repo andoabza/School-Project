@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>School Register Website</title>
+    <link rel="stylesheet" type="text/css" href="../static/styles/style.css">
+    <link rel="shortcut icon" href="../static/img/logo.png" type="image/x-icon">
+    <!--CND tailwind-->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+</head>
+<body class="body">
+    <header class="header">
+        <div class="header__logo">
+            <img src="../static/img/logo.png"alt="logo" width="60px">
+        </div>
+        <div class="header__menu">
+            <ul class="header__menu-listh">
+                <li class="header__menu-item"><a href="/">Home</a></li>
+                <!-- <li class="header__menu-item"><a href="#">About</a></li>
+            -->
+            </ul>
+        </div>
+        <div class="header__auth">
+            <a href="register">Register</a>
+        </div>          
+
+    </header>
+    <div class="container">
+        {% with messages = get_flashed_messages() %}
+        {% if messages %}
+        {% for message in messages %}
+    
+        <p>{{ message }}</p>
+    
+        {% endfor %}
+        {% endif %}
+        {% endwith %}
+        <div class="container__content">
+            <div class="container__content-title">
+                <h1>Title</h1>
+                <p>Lorem ipsum dolor sit amet consectetur,
+                     adipisicing elit. Provident doloremque possimus repudiandae vero fugit, sapiente quod rerum illo dolores, tempore maxime repellendus. Perferendis provident qui,
+                     vero tempora laudantium quo commodi.</p>
+            </div>
+            <div class="container__content-text">
+    </div>
+</body>
+</html>

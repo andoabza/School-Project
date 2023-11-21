@@ -1,55 +1,97 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="../static/styles/styles1.css">
-    <link rel="shortcut icon" href="../static/img/logo.png" type="image/x-icon">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
-    <title>Register</title>
+    <link rel="shortcut icon" href="../static/img/logo.png" type="image/x-icon">
+    <style>
+        .transparent-form {
+            background: rgba(255, 255, 255, 0.8); /* This will give the form a white background with 80% opacity */
+        }
+    </style>
+    <title>Registeration</title>
 </head>
-<body>
 
-    <form action="{{ url_for('register') }}" method="post">
-        <div class="container">
-            <h1>Register</h1>
-            <label for="id">Student Id</label>
-            <input type="text" placeholder="Enter Student Id" name="id" id="id" value="{{ request.form['id'] }}" required>
-            <br>
-            <label for="First name"><b>First name</b></label>
-            <input type="text" placeholder="Enter First name" name="first_name" id="first_name" value="{{ request.form['first_name'] }}" required>
-             <br>   
-            <label for="Middle name"><b>Middle name</b></label>
-            <input type="text" placeholder="Enter Middle name" name="middle_name" id="middle_name" value="{{ request.form['middle_name'] }}" required>
-                <br>
-            <label for="Last name"><b>Last name</b></label>
-            <input type="text" placeholder="Enter Last name" name="last_name" id="last_name" value="{{ request.form['last_name'] }}" required>
-            <br>
-            <label for="gender"><b>Gender</b></label>
-            <select name="gender" id="gender" value="{{ request.form['gender'] }}">
-                <option value="female">Male</option>
-                <option value="male">Female</option>
-            </select>
-            <label for="Grade"><b>Grade</b></label>
-            <input type="number" name="grade" id="grade" min="9" max="12" value="{{ request.form['grade'] }}">
-            <br>
-            <button type="submit" class="registerbtn">Register</button>
-        {% with messages = get_flashed_messages() %}
-        {% if messages %}
-        {% for message in messages %}
-    
-        <p>{{ message }}</p>
-    
-        {% endfor %}
-        {% endif %}
-        {% endwith %}
-        
-    </div>
-        
-        <div class="container terms">
-            
-            <p>By registering you agree to our school <a href="#">Terms & Privacy</a>.</p>
+<body>
+    <div class="w-full bg-grey-500">
+        <div class="container mx-auto py-8">
+            <div class="w-96 mx-auto rounded shadow transparent-form">
+
+                <div class="mx-20 py-4 px-8 text-black text-xl font-bold border-b border-grey-500">Registration
+                </div>
+
+                <form name="student_application" id="student_application" action="{{ url_for('register') }}" method="post">
+                    <div class="py-4 px-8">
+
+                        <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Student ID:</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="id" id="id" value="{{ request.form['id'] }}" placeholder="Enter Your ID" required>
+                     
+                        </div>
+
+
+                        <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">First Name</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="first_name" id="first_name" placeholder="Enter Your Name" value="{{ request.form['first_name'] }}" required>
+                      
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Middle Name</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="middle_name" id="middle_name" value="{{ request.form['middle_name'] }}" placeholder="Enter Your Middle Name" required>
+                      
+                        </div>
+                        
+                        <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Last Name</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
+                                name="last_name" id="last_name" value="{{ request.form['last_name'] }}" placeholder="Enter Your Last Name" required>
+                      
+                        </div>
+
+                        <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Gender</label>
+                            <select class=" border rounded w-full py-2 px-3 text-grey-darker" name="gender" id="gender" value="{{ request.form['gender'] }}">
+                            <option selected="selected" value="male">Male</option>
+                            <option value="female">Female</option>
+                            </select>
+                        </div>
+
+                             <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Grade:</label>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
+                                name="grade" id="grade" min="9" max="12" value="{{ request.form['grade'] }}">
+                        </div>
+                        <div class="mb-4">
+                            <button
+                                class="mb-2 mx-10 rounded-full py-1 px-24 bg-gradient-to-r from-green-400 to-blue-500 ">
+                                Register
+                            </button>
+                            {% with messages = get_flashed_messages() %}
+                            {% if messages %}
+                            {% for message in messages %}
+                        
+                            <p>{{ message }}</p>
+                        
+                            {% endfor %}
+                            {% endif %}
+                            {% endwith %}
+                            
+                        </div>
+                    </div>
+                </form>
+
+            </div>
+
         </div>
-    </form>
+    </div>
+    <!--  Application Details End -->
+    <body style="background-image: url('../static/img/hero-1.png'); background-size: cover; background-repeat: no-repeat;"></body>
 </body>
+
 </html>
