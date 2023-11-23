@@ -3,6 +3,7 @@ from models import storage
 from models.student import Student
 from flask import Flask, render_template, request, redirect, flash, url_for
 from uuid import uuid4
+from save.file_save import save_to_excel
 
 app = Flask(__name__)
 app.strict_slashes = False
@@ -44,6 +45,7 @@ def register():
         student = Student(student_id=Id, first_name=first_name, last_name=last_name, middle_name=middle_name, gender=gender, grade=grade)
         
         record = storage.all()
+        save_to_excel(record)
         
         if student.student_id not in record:
         
