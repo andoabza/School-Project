@@ -37,7 +37,7 @@ class ModelBase:
         of the instance"""
         new_dict = self.__dict__.copy()
         new_dict["__class__"] = self.__class__.__name__
-        new_dict["Time"] = self.Time.strftime("%Y-%m-%d %H:%M:%S")
+        new_dict["Time"] = self.Time.strftime("%Y-%m-%d")
         if "_sa_instance_state" in new_dict.keys():
             del new_dict["_sa_instance_state"]
         return new_dict
