@@ -11,3 +11,7 @@ close.addEventListener('click', function() {
     menu.classList.remove('d-none');
     close.classList.add('d-none');
     });
+var student = $("#student");
+student.click(function() {
+    window.location.href = "students";
+});

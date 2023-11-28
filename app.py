@@ -45,7 +45,6 @@ def register():
         student = Student(student_id=Id, first_name=first_name, last_name=last_name, middle_name=middle_name, gender=gender, grade=grade)
         
         record = storage.all()
-        save_to_excel(record)
         
         if student.student_id not in record:
         
@@ -59,7 +58,9 @@ def register():
             flash('Student with this id already exists')
         
     return render_template('register.html')
-
+@app.route('/students', methods=['GET'])
+def students():
+    return redirect(url_for('index'))
 app.run()
 
 
