@@ -1,14 +1,12 @@
 # School Registration Project
 
-This is a project for the ALX program specialization.
+This is a project for the ALX program specialization. This project is intended for the registration of students online with their school id from anywhere to a specific school.
 
 ## Getting Started
 
+** if you want to use this project **
+
 These instructions will get you a copy of the project up and running on your local machine for development and testing purposes.
-
-### Prerequisites
-
-What things you need to install the software and how to install them.
 
 
 ### Installing
@@ -29,7 +27,13 @@ Explain how to run the automated tests for this system.
 
 ## Deployment
 
-deployed with the help of (pythoneverywhere.com)
+deployed with the help of [pythoneverywhere](pythoneverywhere.com)
+
+## Demo
+
+* [ahs](http://ahs.pythonanywhere.com/)
+
+
 ## Built With
 
 * [Python](https://www.python.org/) - The programming language used
