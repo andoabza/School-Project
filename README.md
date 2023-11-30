@@ -1,4 +1,5 @@
 # School Registration Project
+![Project Image](static/img/project.png)
 
 This is a project for the ALX program specialization. This project is intended for the registration of students online with their school id from anywhere to a specific school.
 
@@ -49,10 +50,10 @@ deployed with the help of [pythoneverywhere](pythoneverywhere.com)
 
 ## License
 
-This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md) file for details
+This project is licensed under the MIT License - see the [LICENSE.md] file for details
 
 ## Acknowledgments
 
-* Hat tip to anyone whose code was used
-* Inspiration
-* etc
+* The Alx Team for everything
+* Github for the student pack
+* Pythoneverywhere for deployment
