@@ -1,5 +1,5 @@
 # School Registration Project
-![Project Image](static/img/project.png)
+![Project Image](static/img/readme.png)
 
 This is a project for the ALX program specialization. This project is intended for the registration of students online with their school id from anywhere to a specific school.
 
