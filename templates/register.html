@@ -6,9 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
     <link rel="shortcut icon" href="../static/img/logo.png" type="image/x-icon">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <style>
         .transparent-form {
             background: rgba(255, 255, 255, 0.8); /* This will give the form a white background with 80% opacity */
+        .im::-webkit-outer-spin-button,
+        .im::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
         }
     </style>
     <title>Registeration</title>
@@ -27,8 +33,9 @@
 
                         <div class="mb-4">
                             <label class="block text-grey-darker text-sm font-bold mb-2">Student ID:</label>
-                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="text"
-                                name="id" id="id" value="{{ request.form['id'] }}" placeholder="Enter Your ID" required>
+                            <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
+                                name="id" id="id" 
+                              value="{{ request.form['id'] }}" placeholder="Enter Your ID" required>
                      
                         </div>
 
@@ -57,16 +64,35 @@
                         <div class="mb-4">
                             <label class="block text-grey-darker text-sm font-bold mb-2">Gender</label>
                             <select class=" border rounded w-full py-2 px-3 text-grey-darker" name="gender" id="gender" value="{{ request.form['gender'] }}">
-                            <option selected="selected" value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option selected="selected" value="M">Male</option>
+                            <option value="F">Female</option>
                             </select>
                         </div>
 
-                             <div class="mb-4">
+                             <!-- <div class="mb-4">
                             <label class="block text-grey-darker text-sm font-bold mb-2">Grade:</label>
                             <input class=" border rounded w-full py-2 px-3 text-grey-darker" type="number"
                                 name="grade" id="grade" min="9" max="12" value="{{ request.form['grade'] }}">
+                        </div> -->
+
+                        <div class="mb-4">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Grade</label>
+                            <select class=" border rounded w-full py-2 px-3 text-grey-darker" name="grade" id="grade" value="{{ request.form['grade'] }}">
+                            <option selected="selected" value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11 Nature">11Nature</option>
+                            <option value="11 Social">11Social</option>
+                            <option value="12">12</option>
+                            </select>
                         </div>
+
+                        <!-- <div class="mb-4" id="ns-selection" style="display: none;">
+                            <label class="block text-grey-darker text-sm font-bold mb-2">Nature or Social:</label>
+                            <select class="border rounded w-full py-2 px-3 text-grey-darker" id="study" name="study" value="{{ request.form['study'] }}">
+                                <option value=>Social</option>
+                                <option value="Nature">Nature</option>
+                            </select>
+                        </div> -->
                         <div class="mb-4">
                             <button
                                 class="mb-2 mx-10 rounded-full py-1 px-24 bg-gradient-to-r from-green-400 to-blue-500 ">
@@ -92,6 +118,7 @@
     </div>
     <!--  Application Details End -->
     <body style="background-image: url('../static/img/hero-1.png'); background-size: cover; background-repeat: no-repeat;"></body>
+    
 </body>
 
 </html>

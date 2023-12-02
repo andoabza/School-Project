@@ -13,8 +13,19 @@ def save_to_excel():
                                                 paswd,
                                                 host,
                                                 db))
+    df = pd.read_sql('SELECT * FROM students where(grade=12)', engine)
+    if not df.empty:
+        df.to_excel('grade_12.xlsx', index=False)
     
-    df = pd.read_sql('SELECT * FROM students', engine)
-
-    df.to_excel('students.xlsx', index=False)
-
+    df = pd.read_sql('SELECT * FROM students where(grade=11)', engine)
+    if not df.empty:
+        df.to_excel('grade_11nature.xlsx', index=False)
+    
+    df = pd.read_sql('SELECT * FROM students where(grade=10)', engine)
+    if not df.empty:
+        df.to_excel('grade_10.xlsx', index=False)
+    
+    df = pd.read_sql('SELECT * FROM students where(grade=9)', engine)
+    if not df.empty:
+        df.to_excel('grade_9.xlsx', index=False)
+save_to_excel()

@@ -13,5 +13,10 @@ close.addEventListener('click', function() {
     });
 var student = $("#student");
 student.click(function() {
-    window.location.href = "students";
+    window.location.href = "https://pythonanywhere.com/login";
+});
+
+exit = document.getElementById('exit');
+exit.addEventListener('click', function() {
+    $('#message').addClass('d-none');                     
 });

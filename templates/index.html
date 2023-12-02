@@ -80,7 +80,8 @@
     {% if messages %}
     {% for message in messages %}
 
-    <p class="text-center">{{ message }}</p>            
+    <p id="message" class="text-center">{{ message }}  <span><ion-icon id="exit" name="close" class="text-2xl">
+    </ion-icon></span></p>       
 
     {% endfor %}
     {% endif %}
@@ -326,14 +327,4 @@
     
 
 </body>
-<script>
-    // // var icon = document.querySelector('ion-icon')
-    // // icon.onclick = function () {
-    // //     alert("Hello");
-    // //     };
-    // $('ion-icon').click(function(){
-    //     alert("Hello");
-    // });
-
-</script>
 </html>

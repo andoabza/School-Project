@@ -42,3 +42,4 @@ class ModelBase:
             del new_dict["_sa_instance_state"]
         return new_dict
     
+        
