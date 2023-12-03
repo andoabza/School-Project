@@ -3,7 +3,6 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker, scoped_session
 from models.model import Base
 from models.student import Student
-import pandas as pd
 
 
 classes = {"Student": Student}
@@ -20,11 +19,10 @@ class DBStorage:
         host = 'localhost'
         db = 'school_db'
         self.__engine = create_engine('mysql+mysqldb://{}:{}@{}/{}'.
-                                      format(user,
-                                             paswd,
-                                             host,
-                                             db))
-
+                                        format(user,
+                                                paswd,
+                                                host,
+                                                db))
     def all(self):
         """returns a dictionary of all objects"""
         rec = self.__session.query(Student).all()
@@ -51,6 +49,14 @@ class DBStorage:
                                        expire_on_commit=False)
         Session = scoped_session(session_factory)
         self.__session = Session()
+
+    def get(self, student_id):
+        """retrieves one object"""
+        rec = self.__session.query(Student).filter_by(student_id=student_id).first()
+        if rec:
+            return rec
+        else:
+            return None
 
     def close(self):
         """calls remove() method on the private session attribute"""

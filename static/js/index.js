@@ -11,3 +11,12 @@ close.addEventListener('click', function() {
     menu.classList.remove('d-none');
     close.classList.add('d-none');
     });
+var student = $("#student");
+student.click(function() {
+    window.location.href = "https://pythonanywhere.com/login";
+});
+
+exit = document.getElementById('exit');
+exit.addEventListener('click', function() {
+    $('#message').addClass('d-none');                     
+});

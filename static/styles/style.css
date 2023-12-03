@@ -11,11 +11,14 @@
 }
 
 <<<<<<< HEAD
+<<<<<<< HEAD
 .section{
      background-color: darkblue;
      opacity: 0.8;
 }
 =======
+=======
+>>>>>>> main
 
 
 @keyframes gradient-animation {
@@ -28,7 +31,11 @@
     background: linear-gradient(315deg, #0B273F, #163A4E, #2C3639, #6B4B33, #7F5C34, #61A0D6);
     background-size: 300% 300%;
     animation: gradient-animation 15s ease infinite;
+<<<<<<< HEAD
 }
 
 
 >>>>>>> 4718001f939e5ba9bc962f24cdeb06c85a004d21
+=======
+}
+>>>>>>> main

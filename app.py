@@ -31,7 +31,7 @@ def register():
     if request.method == 'POST':
         
         Id = request.form['id']
-        
+
         middle_name = request.form['middle_name']
         
         first_name = request.form['first_name']
@@ -41,13 +41,12 @@ def register():
         gender = request.form['gender']
         
         grade = request.form['grade']
+
+        student = Student(student_id=Id, first_name=first_name.upper(), last_name=last_name.upper(), middle_name=middle_name.upper(), gender=gender, grade=grade)
         
-        student = Student(student_id=Id, first_name=first_name, last_name=last_name, middle_name=middle_name, gender=gender, grade=grade)
+        record = storage.get(Id)
         
-        record = storage.all()
-        save_to_excel(record)
-        
-        if student.student_id not in record:
+        if not  record:
         
             storage.new(student)
         
@@ -55,11 +54,14 @@ def register():
         
             flash('Student registered successfully')
             return redirect(url_for('index'))
-        else:
-            flash('Student with this id already exists')
+        
+        flash('Student with this id already exists')
         
     return render_template('register.html')
-
-app.run()
+@app.route('/students', methods=['GET'])
+def students():
+    save_to_excel()
+    return redirect(url_for('index'))
+app.run(debug=True)
 
 
