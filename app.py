@@ -62,6 +62,6 @@ def register():
 def students():
     save_to_excel()
     return redirect(url_for('index'))
-app.run(debug=True)
+app.run()
 
 

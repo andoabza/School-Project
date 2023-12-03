@@ -2,13 +2,6 @@
 import pandas as pd
 from sqlalchemy import create_engine
 
-<<<<<<< HEAD
-def save_to_excel(data):
-    """save data to excel"""
-    file_name = 'data.xlsx'
-    df = pd.DataFrame(data, columns=['First Name', 'MIddle Name', 'Last Name', 'Grade', 'Gender'])
-    df.to_excel(file_name, index=False)
-=======
 def save_to_excel():
     """save to ecxel"""
     user = 'school'
@@ -35,5 +28,3 @@ def save_to_excel():
     df = pd.read_sql('SELECT * FROM students where(grade=9)', engine)
     if not df.empty:
         df.to_excel('grade_9.xlsx', index=False)
-save_to_excel()
->>>>>>> main
