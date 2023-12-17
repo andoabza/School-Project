@@ -3,7 +3,7 @@ import pandas as pd
 from sqlalchemy import create_engine
 
 def save_to_excel():
-    """save to ecxel"""
+    """save to ecxel based on their class"""
     user = 'school'
     paswd = 'school_pwd'
     host = 'localhost'

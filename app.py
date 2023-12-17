@@ -61,7 +61,11 @@ def register():
 @app.route('/students', methods=['GET'])
 def students():
     save_to_excel()
-    return redirect(url_for('index'))
-app.run()
+    return redirect(url_for("index"))
+    
+
+if __name__ == '__main__':
+    """main function app run"""
+    app.run()
 
 

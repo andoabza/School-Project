@@ -11,9 +11,13 @@ close.addEventListener('click', function() {
     menu.classList.remove('d-none');
     close.classList.add('d-none');
     });
-var student = $("#student");
-student.click(function() {
-    window.location.href = "https://pythonanywhere.com/login";
+// var student = $("#student");
+// student.click(function() {
+//     window. = "https://pythonanywhere.com/login";
+// });
+
+document.getElementById('student').addEventListener('click', function() {
+    window.open = "https://pythonanywhere.com/login";
 });
 
 exit = document.getElementById('exit');
